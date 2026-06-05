@@ -1,0 +1,16 @@
+{
+  "package": "@scanfood/logic",
+  "version": "0.1.0",
+  "purpose": "Canonical business logic — single source of truth shared across Scanfood apps (loyalty · rank · date-math)",
+  "domains": {
+    "loyalty": {
+      "source": "src/loyalty.js + src/date.js",
+      "exports": ["calcMemberPoints", "calcMemberCredit", "computeCreditExpiry", "buildVoucherMap", "inWindow", "summary", "numberYMD", "minusYears", "plusMonths", "toDate"]
+    },
+    "rank": {
+      "source": "src/rank.js",
+      "exports": ["resolveRankLevelId", "RANK_CONVERTOR"]
+    }
+  },
+  "backlog": ["VAT", "BOM cost/yield"]
+}
