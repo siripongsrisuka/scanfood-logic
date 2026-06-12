@@ -1,7 +1,7 @@
 {
   "name": "@scanfood/logic",
-  "version": "0.1.0",
-  "description": "Canonical business logic shared across Scanfood repos (loyalty calc · rank · date-math). Single source of truth — import, never redefine (anti-dup gate · contract-layer).",
+  "version": "0.2.0",
+  "description": "Canonical business logic shared across Scanfood repos (loyalty calc · rank · date-math · channel-visibility). Single source of truth — import, never redefine (anti-dup gate · contract-layer).",
   "license": "UNLICENSED",
   "main": "./src/index.js",
   "exports": {
@@ -12,7 +12,8 @@
     },
     "./date": "./src/date.js",
     "./loyalty": "./src/loyalty.js",
-    "./rank": "./src/rank.js"
+    "./rank": "./src/rank.js",
+    "./channelVisibility": "./src/channelVisibility.js"
   },
   "files": [
     "src",
@@ -20,7 +21,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "test": "node test/loyalty.test.js && node test/rank.test.js",
+    "test": "node test/loyalty.test.js && node test/rank.test.js && node test/channelVisibility.test.js",
     "build": "tsup src/index.js --format cjs,esm --clean"
   },
   "devDependencies": {

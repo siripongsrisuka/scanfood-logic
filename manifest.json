@@ -1,7 +1,7 @@
 {
   "package": "@scanfood/logic",
-  "version": "0.1.0",
-  "purpose": "Canonical business logic — single source of truth shared across Scanfood apps (loyalty · rank · date-math)",
+  "version": "0.2.0",
+  "purpose": "Canonical business logic — single source of truth shared across Scanfood apps (loyalty · rank · date-math · channel-visibility)",
   "domains": {
     "loyalty": {
       "source": "src/loyalty.js + src/date.js",
@@ -10,6 +10,12 @@
     "rank": {
       "source": "src/rank.js",
       "exports": ["resolveRankLevelId", "RANK_CONVERTOR"]
+    },
+    "channelVisibility": {
+      "source": "src/channelVisibility.js",
+      "exports": ["isChannelHidden", "isCategoryVisible", "isOptionVisible", "resolveChannelPackaging"],
+      "spec": "agents/channel-visibility-redesign.md (blessed Pack@sess227 · shapes Pack@sess228)",
+      "consumers": "🔜 C3-C5: RN TakeOrder/SaleChannelDetail · ordering ProductDisplay · server fetchShopTable + จุดตัด stock (import เท่านั้น — ห้าม redefine)"
     }
   },
   "backlog": ["VAT", "BOM cost/yield"]
