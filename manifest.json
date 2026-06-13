@@ -1,7 +1,7 @@
 {
   "package": "@scanfood/logic",
-  "version": "0.2.0",
-  "purpose": "Canonical business logic — single source of truth shared across Scanfood apps (loyalty · rank · date-math · channel-visibility)",
+  "version": "0.3.0",
+  "purpose": "Canonical business logic — single source of truth shared across Scanfood apps (loyalty · rank · date-math · channel-visibility · option-select)",
   "domains": {
     "loyalty": {
       "source": "src/loyalty.js + src/date.js",
@@ -16,6 +16,12 @@
       "exports": ["isChannelHidden", "isCategoryVisible", "isOptionVisible", "resolveChannelPackaging"],
       "spec": "agents/channel-visibility-redesign.md (blessed Pack@sess227 · shapes Pack@sess228)",
       "consumers": "🔜 C3-C5: RN TakeOrder/SaleChannelDetail · ordering ProductDisplay · server fetchShopTable + จุดตัด stock (import เท่านั้น — ห้าม redefine)"
+    },
+    "optionSelect": {
+      "source": "src/optionSelect.js",
+      "exports": ["chooseChoice", "countChosen", "chosenQty", "isMainChose", "isQtyChoice"],
+      "spec": "agents/option-model-redesign.md (df-s28 · BLESSED Pack@sess228)",
+      "consumers": "scanfood cartSlice.updateOption/updateBoxOption · scanFood_ordering orderSlice.updateOption/updateBoxOption (ยุบ dup · import เท่านั้น) · UI Modal_Test/Modal_AddProduct ปุ่ม +/−"
     }
   },
   "backlog": ["VAT", "BOM cost/yield"]
