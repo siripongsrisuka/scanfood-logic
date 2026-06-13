@@ -1,6 +1,6 @@
 {
   "name": "@scanfood/logic",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Canonical business logic shared across Scanfood repos (loyalty calc · rank · date-math · channel-visibility). Single source of truth — import, never redefine (anti-dup gate · contract-layer).",
   "license": "UNLICENSED",
   "main": "./src/index.js",
@@ -14,7 +14,8 @@
     "./loyalty": "./src/loyalty.js",
     "./rank": "./src/rank.js",
     "./channelVisibility": "./src/channelVisibility.js",
-    "./optionSelect": "./src/optionSelect.js"
+    "./optionSelect": "./src/optionSelect.js",
+    "./product": "./src/product.js"
   },
   "files": [
     "src",
@@ -22,7 +23,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "test": "node test/loyalty.test.js && node test/rank.test.js && node test/channelVisibility.test.js && node test/optionSelect.test.js",
+    "test": "node test/loyalty.test.js && node test/rank.test.js && node test/channelVisibility.test.js && node test/optionSelect.test.js && node test/product.test.js",
     "build": "tsup src/index.js --format cjs,esm --clean"
   },
   "devDependencies": {
